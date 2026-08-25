@@ -10,6 +10,8 @@ const divisionLogos: Record<string, string> = {
   'soothe-sounds': '/logos/soothe-sounds.png',
   'florecilla': '/logos/florecilla.png',
   'tlx': '/logos/tlx.png',
+  'songearnings': '/logos/songearnings.png',
+  'songlink': '/logos/songlink.png',
 }
 
 export async function generateStaticParams() {
@@ -23,7 +25,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!company) return {}
   return {
     title: `${company.name} — Too Lost Music Group`,
-    description: company.shortDescription,
   }
 }
 
@@ -57,7 +58,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
               <div className="dp-hero-right">
                 {company.website && (
                   <a href={company.website} target="_blank" rel="noopener noreferrer" className="dp-ext">
-                    {company.website.replace(/^https?:\/\//, '')} ↗
+                    {company.website.replace(/^https?:\/\//, '')} {'\u2197\uFE0E'}
                   </a>
                 )}
                 {company.socials?.map((social) => (
@@ -68,7 +69,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
                     rel="noopener noreferrer"
                     className="dp-social"
                   >
-                    {social.label} ↗
+                    {social.label} {'\u2197\uFE0E'}
                   </a>
                 ))}
               </div>

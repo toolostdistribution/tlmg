@@ -3,14 +3,13 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'News — Too Lost Music Group',
-  description: 'Latest news, press coverage, and announcements from Too Lost Music Group.',
 }
 
 export default function NewsPage() {
   const sorted = [...NEWS_ARTICLES].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return (
-    <main className="subpage">
+    <main className="subpage news-page">
       <section className="about-hero-section">
         <div className="section-inner">
           <h1 className="about-headline">News</h1>

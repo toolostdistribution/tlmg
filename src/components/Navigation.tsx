@@ -4,12 +4,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useCallback } from 'react'
 import { ThemeToggle } from './ThemeToggle'
+import { HERO_LOGO_HANDOFF, HERO_LOGO_MORPH_DISTANCE } from './hero-logo-morph'
 
 const NAV_ITEMS = [
   { href: '/about', label: 'About' },
   { href: '/divisions', label: 'Divisions' },
   { href: '/news', label: 'News' },
-  { href: '/careers', label: 'Careers' },
+  { href: 'https://toolost.com/careers', label: 'Careers', external: true },
   { href: '/contact', label: 'Contact', cta: true },
 ]
 
@@ -50,7 +51,7 @@ export function Navigation() {
       return
     }
     function onScroll() {
-      setHeroLogoVisible(window.scrollY < 200)
+      setHeroLogoVisible(window.scrollY < HERO_LOGO_MORPH_DISTANCE * HERO_LOGO_HANDOFF)
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
@@ -71,7 +72,7 @@ export function Navigation() {
   return (
     <nav className={`nav ${scrolled ? 'nav-scrolled' : ''} ${mobileOpen ? 'nav-mobile-open' : ''} ${heroDark ? 'nav-hero-dark' : ''}`}>
       <div className="nav-inner">
-        <Link href="/" className={`nav-logo${isHeroLogoPage && heroLogoVisible ? ' nav-logo-hero-active' : ''}`} aria-label="Too Lost Music Group">
+        <Link href="/" className={`nav-logo${isHeroLogoPage ? ' nav-logo-hero-page' : ''}${isHeroLogoPage && heroLogoVisible ? ' nav-logo-hero-active' : ''}`} aria-label="Too Lost Music Group">
           <svg className="nav-logo-spin" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <path
@@ -90,9 +91,20 @@ export function Navigation() {
         <ul className="nav-links">
           {NAV_ITEMS.map(item => (
             <li key={item.href} className="nav-item">
-              <Link href={item.href} className={`nav-link ${item.cta ? 'nav-link-cta' : ''}`}>
-                {item.label}
-              </Link>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  className={`nav-link ${item.cta ? 'nav-link-cta' : ''}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link href={item.href} className={`nav-link ${item.cta ? 'nav-link-cta' : ''}`}>
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -115,13 +127,25 @@ export function Navigation() {
         <ul className="mobile-nav-links">
           {NAV_ITEMS.map(item => (
             <li key={item.href} className="mobile-nav-item">
-              <Link
-                href={item.href}
-                className={`mobile-nav-link ${pathname === item.href ? 'mobile-nav-link-active' : ''}`}
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  className="mobile-nav-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`mobile-nav-link ${pathname === item.href ? 'mobile-nav-link-active' : ''}`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

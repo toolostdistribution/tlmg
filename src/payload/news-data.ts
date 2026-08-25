@@ -9,6 +9,22 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    title: 'Too Lost Partners with Roblox to Bring Catalog of Independent Music to Games and Virtual Spaces',
+    summary: 'Deal adds thousands of Too Lost-distributed tracks — including music by The All-American Rejects, A$AP Ferg, Teddy Swims, and Alex Warren — to the Roblox Creator Store for use across games and virtual spaces.',
+    date: '2026-07-28',
+    source: 'Music Business Worldwide',
+    url: 'https://www.musicbusinessworldwide.com/too-lost-partners-with-roblox-to-bring-catalog-of-independent-music-to-games-and-virtual-spaces/',
+    image: 'https://www.musicbusinessworldwide.com/files/2026/07/Too-Lost-x-Roblox.jpg',
+  },
+  {
+    title: 'Too Lost Acquires Australia\'s GYRO.Group in First Acquisition Since Nine-Figure Raise',
+    summary: 'Too Lost acquires Brisbane-based GYRO.Group, extending its footprint across Australia, New Zealand, and the wider Asia-Pacific region. G.Y.R.O. co-founder Andy Irvine becomes Head of APAC at Too Lost.',
+    date: '2026-07-15',
+    source: 'Music Business Worldwide',
+    url: 'https://www.musicbusinessworldwide.com/too-lost-acquires-australias-gyro-group-in-first-acquisition-since-nine-figure-raise/',
+    image: 'https://www.musicbusinessworldwide.com/files/2026/07/Screenshot-2026-07-15-at-11.46.29-e1784112425622.jpg',
+  },
+  {
     title: 'Jay Moore Appointed Chief Investment Officer at Too Lost',
     summary: 'Moore joins from Position Music to lead investment strategy as Too Lost expands its catalog and capital platform.',
     date: '2026-05-28',
@@ -225,7 +241,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: 'https://www.musicbusinessworldwide.com/files/2025/02/michael-lewan-hi-res-photo-1-e1740576151628.jpeg',
   },
   {
-    title: 'GYRO Group Recruits Henry Compton',
+    title: 'GYRO.Group Recruits Henry Compton',
     summary: 'Australia\'s leading indie distributor strengthens leadership team with key hire.',
     date: '2026-05-13',
     source: 'Billboard',
@@ -233,7 +249,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: 'https://www.billboard.com/wp-content/uploads/2026/05/henry-compton-1800-2026.jpg?w=1024',
   },
   {
-    title: 'GYRO Group Expands Into Latin America with New Office in Brazil',
+    title: 'GYRO.Group Expands Into Latin America with New Office in Brazil',
     summary: 'Australia\'s largest independent distribution company opens operations in Brazil to serve growing Latin market.',
     date: '2026-04-15',
     source: 'Music Business Worldwide',
@@ -241,7 +257,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: 'https://www.musicbusinessworldwide.com/files/2026/03/Team-Photo-e1774529446743.jpg',
   },
   {
-    title: 'GYRO Group Senior Leadership Promotions',
+    title: 'GYRO.Group Senior Leadership Promotions',
     summary: 'Henry Compton, Adrian Burke, and Alison Bremner promoted in leadership restructure.',
     date: '2026-05-13',
     source: 'The Music',
@@ -249,23 +265,23 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: 'https://media.themusic.com.au/images/standard/news-25/2506-gy-img-6958-2.990x660.webp',
   },
   {
-    title: 'GYRO Group Appoints Matthew Rogers as Chief Commercial Officer',
-    summary: 'Rogers takes on expanded role leading commercial strategy across GYRO Group and DistroDirect.',
+    title: 'GYRO.Group Appoints Matthew Rogers as Chief Commercial Officer',
+    summary: 'Rogers takes on expanded role leading commercial strategy across GYRO.Group and DistroDirect.',
     date: '2025-06-20',
     source: 'Billboard',
     url: 'https://www.billboard.com/pro/gyro-group-appoints-matthew-rogers-chief-commercial-officer/',
     image: 'https://www.billboard.com/wp-content/uploads/2025/06/GY_IMG_6958-2.jpg?w=1024',
   },
   {
-    title: 'Power 50: Viv Mellish & Andy Irvine, GYRO Group',
-    summary: 'GYRO leadership recognized in Australia\'s annual music industry power list.',
+    title: 'Power 50: Viv Mellish & Andy Irvine, GYRO.Group',
+    summary: 'G.Y.R.O. leadership recognized in Australia\'s annual music industry power list.',
     date: '2025-11-26',
     source: 'The Music',
     url: 'https://themusic.com.au/industry/power-50-2025-viv-mellish-andy-irvine-gyrostream/jpIsgIOChYQ/26-11-25',
     image: 'https://media.themusic.com.au/images/standard/power-50-2025/2025-viv-mellish-andy-irvine.990x660.webp',
   },
   {
-    title: 'GYRO and DistroDirect Launch Group Speed Artist Services Venture',
+    title: 'G.Y.R.O. and DistroDirect Launch Group Speed Artist Services Venture',
     summary: 'New artist services company combines marketing firepower with distribution infrastructure.',
     date: '2025-03-10',
     source: 'Music Business Worldwide',
@@ -274,15 +290,15 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   },
   {
     title: 'How This Aussie Company Helps Indie Musicians Crack the Streaming Code',
-    summary: 'The Guardian profiles GYRO Group\'s innovative approach to supporting independent artists in the streaming era.',
+    summary: 'The Guardian profiles GYRO.Group\'s innovative approach to supporting independent artists in the streaming era.',
     date: '2025-02-26',
     source: 'The Guardian',
     url: 'https://www.theguardian.com/nab-innovative-businesses/2025/feb/26/how-this-aussie-company-helps-indie-musicians-crack-the-streaming-code',
     image: 'https://i.guim.co.uk/img/media/f76827146eac050da28870ea1641e96645fdb09c/0_0_6637_3982/master/6637.jpg?width=700&quality=85&auto=format&fit=max&s=e5d13ff102b045621a5ee2e69a9a5f72',
   },
   {
-    title: 'GYRO Expands Offerings with GYROPublishing Admin Service',
-    summary: 'New publishing administration service extends GYRO\'s capabilities for Australian independent artists.',
+    title: 'G.Y.R.O. Expands Offerings with GYROPublishing Admin Service',
+    summary: 'New publishing administration service extends G.Y.R.O.\'s capabilities for Australian independent artists.',
     date: '2023-09-01',
     source: 'The Music',
     url: 'https://themusic.com.au/industry/gyrostream-expands-offerings-with-gyropublishing-admin-service/QHn-UlVUV1Y/01-09-23',
@@ -329,8 +345,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: 'https://www.billboard.com/wp-content/uploads/2025/05/Billboard-40-Under-40-2025-featured.jpg?w=1024',
   },
   {
-    title: 'GYRO on Spotify\'s Direct Artist Upload Strategy',
-    summary: 'Independent artists need extra support services beyond basic upload capabilities, GYRO argues.',
+    title: 'G.Y.R.O. on Spotify\'s Direct Artist Upload Strategy',
+    summary: 'Independent artists need extra support services beyond basic upload capabilities, G.Y.R.O. argues.',
     date: '2024-06-15',
     source: 'The Music Network',
     url: 'https://themusicnetwork.com/news/exclusive-aussie-distributor-gyrostream-on-spotifys-direct-artist-upload-strategy-independent-artists-need-extra-support-services',

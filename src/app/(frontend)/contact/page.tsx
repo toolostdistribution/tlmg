@@ -2,16 +2,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact — Too Lost Music Group',
-  description: 'Get in touch with Too Lost Music Group.',
 }
 
 const contacts = [
-  { tag: 'general', title: 'General Inquiries', email: 'info@tlmg.co' },
-  { tag: 'press', title: 'Press & Media', email: 'press@tlmg.co' },
-  { tag: 'distribution', title: 'Distribution Support', email: 'support@toolost.com' },
-  { tag: 'partnerships', title: 'Business Development', email: 'partnerships@tlmg.co' },
-  { tag: 'careers', title: 'Careers', email: 'careers@tlmg.co' },
-  { tag: 'legal', title: 'Legal & Rights', email: 'legal@toolost.com' },
+  { tag: '', title: 'General Inquiries and Distribution Support', email: 'support@toolost.com' },
 ]
 
 const offices = [
@@ -19,6 +13,9 @@ const offices = [
   { city: 'Hollywood', label: 'West Coast', country: 'United States', address: '1680 Vine Street, 11th Floor, Los Angeles, CA 90028' },
   { city: 'Reykjavík', label: 'Europe', country: 'Iceland', address: 'Laugavegur 26, 101 Reykjavík' },
   { city: 'Brisbane', label: 'APAC', country: 'Australia', address: '279 Brunswick St, Fortitude Valley QLD 4006, Australia' },
+  { city: 'Sydney', label: 'APAC', country: 'Australia', address: '' },
+  { city: 'Melbourne', label: 'APAC', country: 'Australia', address: '' },
+  { city: 'Manila', label: 'APAC', country: 'Philippines', address: '' },
   { city: 'Mumbai', label: 'APAC', country: 'India', address: '' },
   { city: 'São Paulo', label: 'Americas', country: 'Brazil', address: '' },
   { city: 'Toronto', label: 'Americas', country: 'Canada', address: '' },
@@ -37,16 +34,9 @@ export default function ContactPage() {
 
       <section className="section">
         <div className="section-inner">
-          <div className="section-header">
-            <div className="section-header-left">
-              <h2 className="section-title">Departments</h2>
-            </div>
-            <span className="section-count">{contacts.length} contacts</span>
-          </div>
-          <div className="cards-grid">
+          <div className="cards-grid" style={{ gridTemplateColumns: '1fr' }}>
             {contacts.map((c) => (
               <a key={c.email} href={`mailto:${c.email}`} className="card">
-                <p className="card-tag">{c.tag}</p>
                 <h3 className="card-title">{c.title}</h3>
                 <p className="card-desc">{c.email}</p>
               </a>
@@ -57,12 +47,6 @@ export default function ContactPage() {
 
       <section className="section">
         <div className="section-inner">
-          <div className="section-header">
-            <div className="section-header-left">
-              <h2 className="section-title">Offices</h2>
-            </div>
-            <span className="section-count">{offices.length} locations</span>
-          </div>
           <div className="offices-grid">
             {offices.map((office) => (
               <div key={office.city} className="office-card">

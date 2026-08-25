@@ -9,6 +9,9 @@ const CITIES = [
   { city: 'São Paulo', zone: 'America/Sao_Paulo' },
   { city: 'Reykjavík', zone: 'Atlantic/Reykjavik' },
   { city: 'Brisbane', zone: 'Australia/Brisbane' },
+  { city: 'Sydney', zone: 'Australia/Sydney' },
+  { city: 'Melbourne', zone: 'Australia/Melbourne' },
+  { city: 'Manila', zone: 'Asia/Manila' },
   { city: 'Mumbai', zone: 'Asia/Kolkata' },
 ]
 

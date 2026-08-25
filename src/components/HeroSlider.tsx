@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type Artist = { src: string; name: string }
 
@@ -61,22 +61,24 @@ const ROW_SIZES = [9, 8, 8, 8, 8]
 const ROW_DURATIONS = [42, 56, 48, 60, 44]
 const ROW_OFFSETS = [0, -60, -30, -90, -15]
 
+function buildRows(artists: Artist[]): Artist[][] {
+  const result: Artist[][] = []
+  let cursor = 0
+  for (const size of ROW_SIZES) {
+    result.push(artists.slice(cursor, cursor + size))
+    cursor += size
+  }
+  return result
+}
+
 export function HeroSlider() {
   const [mounted, setMounted] = useState(false)
   const [scrollFade, setScrollFade] = useState(0)
-
-  const rows = useMemo(() => {
-    const shuffled = shuffle(ALL_ARTISTS)
-    const result: Artist[][] = []
-    let cursor = 0
-    for (const size of ROW_SIZES) {
-      result.push(shuffled.slice(cursor, cursor + size))
-      cursor += size
-    }
-    return result
-  }, [])
+  // Deterministic order for SSR/hydration; shuffled on mount while still invisible.
+  const [rows, setRows] = useState(() => buildRows(ALL_ARTISTS))
 
   useEffect(() => {
+    setRows(buildRows(shuffle(ALL_ARTISTS)))
     setMounted(true)
   }, [])
 

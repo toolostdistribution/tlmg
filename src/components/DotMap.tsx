@@ -18,10 +18,13 @@ const OFFICES: OfficeLocation[] = [
   { city: 'New York', country: 'United States', role: 'Too Lost (HQ)', lng: -73.9897, lat: 40.7394, address: '915 Broadway, 8th Floor, New York NY 10010', photo: '/offices/new-york.jpg' },
   { city: 'Hollywood', country: 'United States', role: 'Too Lost', lng: -118.3287, lat: 34.1017, address: '1680 Vine Street, 11th Floor, Los Angeles, CA 90028', photo: '/offices/hollywood.jpg' },
   { city: 'Reykjavík', country: 'Iceland', role: 'Too Lost', lng: -21.9426, lat: 64.1466, address: 'Laugavegur 26, 101 Reykjavík', photo: '/offices/reykjavik.jpg' },
-  { city: 'Brisbane', country: 'Australia', role: 'GYRO Group', lng: 153.0251, lat: -27.4698, address: '279 Brunswick St, Fortitude Valley QLD 4006', photo: '/offices/brisbane.jpg' },
-  { city: 'Mumbai', country: 'India', role: 'GYRO Group', lng: 72.8656, lat: 19.0596, address: '', photo: '/offices/mumbai.jpg' },
-  { city: 'São Paulo', country: 'Brazil', role: 'GYRO Group', lng: -46.6550, lat: -23.5613, address: '', photo: '/offices/sao-paulo.jpg' },
-  { city: 'Toronto', country: 'Canada', role: 'GYRO Group', lng: -79.3832, lat: 43.6532, address: '', photo: '/offices/toronto.jpg' },
+  { city: 'Brisbane', country: 'Australia', role: 'GYRO.Group', lng: 153.0251, lat: -27.4698, address: '279 Brunswick St, Fortitude Valley QLD 4006', photo: '/offices/brisbane.jpg' },
+  { city: 'Sydney', country: 'Australia', role: 'GYRO.Group', lng: 151.2093, lat: -33.8688, address: '', photo: '/offices/sydney.jpg' },
+  { city: 'Melbourne', country: 'Australia', role: 'GYRO.Group', lng: 144.9631, lat: -37.8136, address: '', photo: '/offices/melbourne.jpg' },
+  { city: 'Manila', country: 'Philippines', role: 'GYRO.Group', lng: 120.9842, lat: 14.5995, address: '', photo: '/offices/manila.jpg' },
+  { city: 'Mumbai', country: 'India', role: 'GYRO.Group', lng: 72.8656, lat: 19.0596, address: '', photo: '/offices/mumbai.jpg' },
+  { city: 'São Paulo', country: 'Brazil', role: 'GYRO.Group', lng: -46.6550, lat: -23.5613, address: '', photo: '/offices/sao-paulo.jpg' },
+  { city: 'Toronto', country: 'Canada', role: 'GYRO.Group', lng: -79.3832, lat: 43.6532, address: '', photo: '/offices/toronto.jpg' },
 ]
 
 function createDotPatternImage(size: number, dotRadius: number, color: [number, number, number, number]): ImageData {
@@ -41,6 +44,9 @@ export function DotMap() {
   const mapContainer = useRef<HTMLDivElement>(null)
   const map = useRef<mapboxgl.Map | null>(null)
   const [activeOffice, setActiveOffice] = useState(0)
+  // Mapbox GL throws when the browser has no working WebGL context. Without
+  // this the exception escapes to the router error boundary and blanks the page.
+  const [mapAvailable, setMapAvailable] = useState(true)
 
   function selectOffice(index: number) {
     setActiveOffice(index)
@@ -81,7 +87,7 @@ export function DotMap() {
       ? [255, 255, 255, 70]
       : [0, 0, 0, 50]
 
-    map.current = new mapboxgl.Map({
+    const mapOptions: mapboxgl.MapOptions = {
       container: mapContainer.current,
       style: {
         version: 8,
@@ -110,7 +116,14 @@ export function DotMap() {
       boxZoom: false,
       pitchWithRotate: false,
       attributionControl: false,
-    })
+    }
+
+    try {
+      map.current = new mapboxgl.Map(mapOptions)
+    } catch {
+      setMapAvailable(false)
+      return
+    }
 
     map.current.on('load', () => {
       const m = map.current!
@@ -251,8 +264,8 @@ export function DotMap() {
 
   return (
     <div className="dot-map-wrap">
-      <div className="dot-map-top">
-        <div ref={mapContainer} className="dot-map" />
+      <div className={`dot-map-top ${mapAvailable ? '' : 'dot-map-top--no-map'}`}>
+        {mapAvailable && <div ref={mapContainer} className="dot-map" />}
         <div className="dot-map-highlight">
           <div className="dot-map-highlight-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -47,6 +47,9 @@ const OFFICES = [
   { city: 'São Paulo', country: 'Brazil', address: '', region: 'Americas' },
   { city: 'Reykjavík', country: 'Iceland', address: 'Laugavegur 26, 101 Reykjavík', region: 'EMEA' },
   { city: 'Brisbane', country: 'Australia', address: '279 Brunswick St, Fortitude Valley QLD 4006, Australia', region: 'APAC' },
+  { city: 'Sydney', country: 'Australia', address: '', region: 'APAC' },
+  { city: 'Melbourne', country: 'Australia', address: '', region: 'APAC' },
+  { city: 'Manila', country: 'Philippines', address: '', region: 'APAC' },
   { city: 'Mumbai', country: 'India', address: '', region: 'APAC' },
 ]
 
@@ -271,7 +274,7 @@ export default async function NewHome() {
             <header className="nw-section-head" data-nw-reveal>
               <span className="nw-section-num">04</span>
               <h2>Global Presence</h2>
-              <p className="nw-section-sub">9 offices · 3 regions</p>
+              <p className="nw-section-sub">10 offices · 3 regions</p>
             </header>
 
             <div className="nw-offices" data-nw-reveal>
@@ -380,7 +383,7 @@ export default async function NewHome() {
           <nav className="nw-footer-col" aria-label="Companies">
             <h4>Companies</h4>
             <a href="https://toolost.com" target="_blank" rel="noopener noreferrer">Too Lost</a>
-            <a href="https://www.gyro.music/" target="_blank" rel="noopener noreferrer">G.Y.R.O</a>
+            <a href="https://www.gyro.music/" target="_blank" rel="noopener noreferrer">G.Y.R.O.</a>
           </nav>
         </div>
         <div className="nw-container nw-footer-base">

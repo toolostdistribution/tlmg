@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Team — Too Lost Music Group',
-  description: 'Meet the team behind Too Lost Music Group.',
 }
 
 export default function TeamPage() {

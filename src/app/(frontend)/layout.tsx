@@ -22,7 +22,6 @@ const monoFont = Space_Mono({
 
 export const metadata: Metadata = {
   title: 'Too Lost Music Group',
-  description: 'A group of divisions shaping the future of music, media, and technology.',
 }
 
 export default function FrontendLayout({
@@ -31,7 +30,7 @@ export default function FrontendLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className={`${displayFont.variable} ${monoFont.variable}`}>
+    <div className={`site-shell ${displayFont.variable} ${monoFont.variable}`}>
       <Loader />
       <div className="page-grid" aria-hidden="true">
         <div className="page-grid-inner" />

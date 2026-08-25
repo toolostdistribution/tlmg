@@ -23,8 +23,6 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Too Lost Music Group — Independent Music, Institutionalized',
-  description:
-    'A global family of music companies spanning distribution, publishing, rights management, catalog ownership, and artist services.',
 }
 
 export default function NewLayout({

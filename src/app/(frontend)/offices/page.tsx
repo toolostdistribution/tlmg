@@ -11,7 +11,7 @@ export default function OfficesPage() {
           <Link href="/" className="page-back">← back</Link>
           <h1 className="page-title">Our Offices</h1>
           <p className="page-desc">
-            Operating across nine cities on five continents, we work where music happens.
+            Operating across ten cities on five continents, we work where music happens.
           </p>
         </div>
       </section>

@@ -8,6 +8,9 @@ const offices = [
   { name: 'Hollywood', label: 'West Coast', country: 'United States', address: '1680 Vine Street, 11th Floor, Los Angeles, CA 90028', image: '/offices/hollywood.jpg' },
   { name: 'Reykjavík', label: 'Europe', country: 'Iceland', address: 'Laugavegur 26, 101 Reykjavík', image: '/offices/reykjavik.jpg' },
   { name: 'Brisbane', label: 'APAC', country: 'Australia', address: '279 Brunswick St, Fortitude Valley QLD 4006, Australia', image: '/offices/brisbane.jpg' },
+  { name: 'Sydney', label: 'APAC', country: 'Australia', address: '', image: '/offices/sydney.jpg' },
+  { name: 'Melbourne', label: 'APAC', country: 'Australia', address: '', image: '/offices/melbourne.jpg' },
+  { name: 'Manila', label: 'APAC', country: 'Philippines', address: '', image: '/offices/manila.jpg' },
   { name: 'Mumbai', label: 'APAC', country: 'India', address: '', image: '/offices/mumbai.jpg' },
   { name: 'São Paulo', label: 'Americas', country: 'Brazil', address: '', image: '/offices/sao-paulo.jpg' },
   { name: 'Toronto', label: 'Americas', country: 'Canada', address: '', image: '/offices/toronto.jpg' },
@@ -38,7 +41,7 @@ export default function AboutPage() {
               Across its portfolio, Too Lost Music Group serves more than half a million artists and record labels, manages millions of recordings and compositions worldwide, and delivers approximately 10% of the world&apos;s newly released music each day.
             </p>
             <p>
-              With more than 170 professionals across nine global offices, the group combines sophisticated technology, operational expertise, and flexible capital to help independent creators and music companies grow efficiently, create long-term value, and retain control of their rights, ownership, and creative independence.
+              With more than 170 professionals across ten global offices, the group combines sophisticated technology, operational expertise, and flexible capital to help independent creators and music companies grow efficiently, create long-term value, and retain control of their rights, ownership, and creative independence.
             </p>
           </div>
         </div>
@@ -114,7 +117,6 @@ export default function AboutPage() {
             <div className="section-header-left">
               <h2 className="section-title">Global Presence</h2>
             </div>
-            <span className="section-count">9 offices</span>
           </div>
           <DotMap />
         </div>
