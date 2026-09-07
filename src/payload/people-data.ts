@@ -163,11 +163,11 @@ export const leaders: Leader[] = [
   {
     name: 'Jennifer Ferrer',
     slug: 'jennifer-ferrer',
-    role: 'Director, Commercial Strategy, Too Lost Music Group',
+    role: 'Vice President, Commercial Strategy, Too Lost Music Group',
     photo: '/team/jennifer-ferrer.jpeg',
     linkedin: 'https://www.linkedin.com/in/jen-ferrer-la/',
     bio: [
-      'Jen Ferrer is the Director of Commercial & Artist Strategy at Too Lost, where she helps lead commercial strategy, product marketing, artist development, and label services across the company\'s global roster. Her work supports independent artists, labels, and partners through release strategy, platform positioning, audience growth, and commercial opportunities across digital music services.',
+      'Jen Ferrer is the Vice President of Commercial Strategy at Too Lost, where she helps lead commercial strategy, product marketing, artist development, and label services across the company\'s global roster. Her work supports independent artists, labels, and partners through release strategy, platform positioning, audience growth, and commercial opportunities across digital music services.',
       'Jen brings deep experience across label management, product strategy, music curation, and artist marketing, with a particular background in dance, electronic, pop, and independent music. Since joining Too Lost, she has played an important role in expanding the company\'s artist and label services capabilities, helping strengthen the connection between Too Lost\'s technology platform, DSP partners, and the creators it serves.',
       'Prior to Too Lost, Jen held senior roles at Warner Music Group\'s ADA Worldwide, where she worked across label and product management. She is also an active DJ, curator, and radio host in Los Angeles, bringing a creator-focused perspective to her work with artists, labels, and music communities.',
     ],
@@ -253,11 +253,11 @@ export const leaders: Leader[] = [
   {
     name: 'Aldo Davalos',
     slug: 'aldo-davalos',
-    role: 'Head of Business Development, Too Lost Music Group',
+    role: 'Executive Vice President, Strategy & Corporate Development, Too Lost Music Group',
     photo: '/team/aldo-davalos.jpeg',
     linkedin: 'https://www.linkedin.com/in/aldodavalos/',
     bio: [
-      'Aldo Davalos is the Head of Business Development at Too Lost, where he helps lead strategic partnerships, artist and label relationships, and commercial growth across the company\'s global platform. His work focuses on expanding Too Lost\'s reach across the independent music ecosystem, building relationships with artists, managers, labels, and rights holders, and identifying new opportunities for growth across distribution, publishing, rights management, and artist services.',
+      'Aldo Davalos is the Executive Vice President of Strategy & Corporate Development at Too Lost, where he helps lead strategic partnerships, artist and label relationships, and commercial growth across the company\'s global platform. His work focuses on expanding Too Lost\'s reach across the independent music ecosystem, building relationships with artists, managers, labels, and rights holders, and identifying new opportunities for growth across distribution, publishing, rights management, and artist services.',
       'Aldo brings more than two decades of music industry experience across recorded music, publishing, A&R, artist management, and business development. Earlier in his career, he held roles at Warner Music Group and Ultra Music, and later helped build the publishing division at Steve Aoki\'s Dim Mak. He has also held senior positions in artist management, working with major artists including Migos.',
       'Since joining Too Lost, Aldo has played an important role in expanding the company\'s presence on the West Coast and strengthening its relationships across the broader artist, manager, label, and creator communities. His background across labels, publishing, management, and independent music gives him a broad perspective on how to support artists and rights holders while building scalable commercial partnerships.',
     ],
@@ -265,11 +265,11 @@ export const leaders: Leader[] = [
   {
     name: 'Marc Emert-Hutner',
     slug: 'marc-emert-hutner',
-    role: 'Vice President, Artists & Repertoire, Too Lost Music Group',
+    role: 'Senior Vice President, Artists & Repertoire, Too Lost Music Group',
     photo: '/team/marc-emert-hutner.png',
     linkedin: 'https://www.linkedin.com/in/mahutner/',
     bio: [
-      'Marc Emert-Hutner is the Vice President of A&R at Too Lost, where he helps lead artist, songwriter, and label development across the company\'s global roster. His work focuses on identifying and supporting high-potential talent, building strategic artist and label relationships, and expanding Too Lost\'s role as a long-term partner for independent creators and rights holders.',
+      'Marc Emert-Hutner is the Senior Vice President of Artists & Repertoire at Too Lost, where he helps lead artist, songwriter, and label development across the company\'s global roster. His work focuses on identifying and supporting high-potential talent, building strategic artist and label relationships, and expanding Too Lost\'s role as a long-term partner for independent creators and rights holders.',
       'Marc brings more than two decades of music industry experience across A&R, publishing, songwriter advocacy, artist development, and creative strategy. Prior to joining Too Lost, he spent more than 20 years at ASCAP, where he served as Vice President and Head of Pop/Rock Membership. In that role, he played a key part in signing, retaining, and supporting leading songwriters and publishers, while helping create opportunities for writers across the broader music industry.',
       'Marc is known for his work with top songwriters and artists, including Charli XCX, Adam Levine, and Olivia Rodrigo. Earlier in his career, he was active as a singer, guitarist, songwriter, producer, and performer with bands including Pleasure Club and Bicycle Thief, bringing a creator-first perspective to his work with artists, labels, and music partners.',
     ],
@@ -290,11 +290,11 @@ export const leaders: Leader[] = [
   {
     name: 'Mark VanAtta',
     slug: 'mark-vanatta',
-    role: 'Vice President, Finance, Too Lost Music Group',
+    role: 'Senior Vice President, Finance, Too Lost Music Group',
     photo: '/team/mark-vanatta.jpeg',
     linkedin: 'https://www.linkedin.com/in/mvanatta/',
     bio: [
-      'Mark VanAtta is the Vice President of Finance at Too Lost, where he leads the company\'s finance function and supports financial planning, accounting, reporting, forecasting, and strategic decision-making across the business. His work helps support Too Lost\'s continued growth as a global music technology platform serving independent artists, labels, and rights holders. Mark brings broad finance and operating experience across music, consumer, hospitality, and technology-enabled businesses.',
+      'Mark VanAtta is the Senior Vice President of Finance at Too Lost, where he leads the company\'s finance function and supports financial planning, accounting, reporting, forecasting, and strategic decision-making across the business. His work helps support Too Lost\'s continued growth as a global music technology platform serving independent artists, labels, and rights holders. Mark brings broad finance and operating experience across music, consumer, hospitality, and technology-enabled businesses.',
       'Prior to joining Too Lost, he served as Vice President of Finance at Tree House Brewing Company, where he oversaw finance, accounting, and technology functions while supporting strategic initiatives across a multi-location business. He previously held finance leadership roles at Postcard Cabins, formerly Getaway, where he helped build and scale the company\'s finance function through multiple stages of growth, financing, and its eventual exit to Marriott.',
       'Earlier in his career, Mark held a senior FP&A role at Warner Music Group, giving him direct experience across music industry operations, forecasting, and financial planning. He is a CPA and Certified Fraud Examiner, and holds a degree from Syracuse University\'s Martin J. Whitman School of Management.',
     ],
