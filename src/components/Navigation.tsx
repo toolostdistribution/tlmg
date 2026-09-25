@@ -8,7 +8,7 @@ import { HERO_LOGO_HANDOFF, HERO_LOGO_MORPH_DISTANCE } from './hero-logo-morph'
 
 const NAV_ITEMS = [
   { href: '/about', label: 'About' },
-  { href: '/divisions', label: 'Divisions' },
+  { href: '/divisions', label: 'Brands' },
   { href: '/news', label: 'News' },
   { href: 'https://toolost.com/careers', label: 'Careers', external: true },
   { href: '/contact', label: 'Contact', cta: true },

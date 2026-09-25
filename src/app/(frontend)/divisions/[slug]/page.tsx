@@ -40,7 +40,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
     <main className="dp">
       <section className="dp-hero">
         <div className="section-inner">
-          <Link href="/divisions" className="dp-back">← Back to Divisions</Link>
+          <Link href="/divisions" className="dp-back">← Back to Brands</Link>
           <div className="dp-hero-grid">
             <div className="dp-hero-left">
               {(company.logo?.url || divisionLogos[company.slug]) ? (

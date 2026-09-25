@@ -1,7 +1,7 @@
 import { getCompanies } from '@/payload/queries'
 import { DivisionsGrid } from '@/components/DivisionsGrid'
 
-export const metadata = { title: 'Divisions — Too Lost Music Group' }
+export const metadata = { title: 'Brands — Too Lost Music Group' }
 
 export default async function DivisionsPage() {
   const companies = await getCompanies()
@@ -10,7 +10,7 @@ export default async function DivisionsPage() {
     <main className="subpage">
       <section className="about-hero-section">
         <div className="section-inner">
-          <h1 className="about-headline">Divisions</h1>
+          <h1 className="about-headline">Brands</h1>
         </div>
       </section>
 
