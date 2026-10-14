@@ -1,4 +1,3 @@
-import { withPayload } from '@payloadcms/next/withPayload'
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
@@ -6,6 +5,9 @@ const nextConfig: NextConfig = {
     turbopackServerFastRefresh: true,
   },
   allowedDevOrigins: ['tlmg.test'],
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
+  },
   async redirects() {
     return [
       { source: '/divisions', destination: '/brands', permanent: true },
@@ -16,4 +18,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withPayload(nextConfig)
+export default nextConfig

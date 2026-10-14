@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { Company } from '@/payload/queries'
+import type { Company } from '@/sanity/queries'
 
 const LOGOS: Record<string, string> = {
   'too-lost': '/too-lost-icon.png',

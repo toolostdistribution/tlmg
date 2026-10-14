@@ -1,4 +1,4 @@
-import { getCompanies } from '@/payload/queries'
+import { getCompanies } from '@/sanity/queries'
 import { DivisionsGrid } from '@/components/DivisionsGrid'
 
 export const metadata = { title: 'Brands — Too Lost Music Group' }

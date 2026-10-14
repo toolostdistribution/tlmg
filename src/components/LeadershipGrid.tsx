@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { leaders, type Leader } from '@/payload/people-data'
+import { getLeaders } from '@/sanity/queries'
 
-export { leaders, type Leader }
+export async function LeadershipGrid() {
+  const leaders = await getLeaders()
 
-export function LeadershipGrid() {
   return (
     <div className="cards-grid cards-grid-team">
       {leaders.map((member) => {

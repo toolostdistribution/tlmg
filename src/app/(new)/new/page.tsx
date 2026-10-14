@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { getCompanies } from '@/payload/queries'
-import { NEWS_ARTICLES } from '@/payload/news-data'
-import { boardMembers, leaders } from '@/payload/people-data'
+import { getBoardMembers, getCompanies, getLeaders, getNews } from '@/sanity/queries'
 import { NewHeader } from '@/components/new/NewHeader'
 import { Reveal } from '@/components/new/Reveal'
 import { CountUp } from '@/components/new/CountUp'
@@ -59,26 +57,31 @@ const PARTNERS = [
   { name: 'Pinnacle Financial Partners', desc: 'American commercial bank, $100B+ in assets', logo: '/investors/pinnacle.png' },
 ]
 
-const board: Person[] = boardMembers.map((m) => ({
-  name: m.name,
-  role: m.role,
-  tag: m.tag,
-  photo: m.photo,
-  linkedin: m.linkedin,
-  bio: m.bio,
-}))
-
-const executives: Person[] = leaders.map((l) => ({
-  name: l.name,
-  role: l.role,
-  tag: 'Executive',
-  photo: l.photo,
-  linkedin: l.linkedin,
-  bio: l.bio,
-}))
-
 export default async function NewHome() {
-  const companies = await getCompanies()
+  const [companies, boardMembers, leaders, news] = await Promise.all([
+    getCompanies(),
+    getBoardMembers(),
+    getLeaders(),
+    getNews(),
+  ])
+
+  const board: Person[] = boardMembers.map((m) => ({
+    name: m.name,
+    role: m.role,
+    tag: m.tag,
+    photo: m.photo,
+    linkedin: m.linkedin,
+    bio: m.bio,
+  }))
+
+  const executives: Person[] = leaders.map((l) => ({
+    name: l.name,
+    role: l.role,
+    tag: 'Executive',
+    photo: l.photo,
+    linkedin: l.linkedin,
+    bio: l.bio,
+  }))
   const year = new Date().getFullYear()
 
   return (
@@ -305,7 +308,7 @@ export default async function NewHome() {
             </header>
 
             <div className="nw-news" data-nw-reveal>
-              {NEWS_ARTICLES.slice(0, 6).map((article) => {
+              {news.slice(0, 6).map((article) => {
                 const d = new Date(article.date)
                 const dateLabel = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
                 return (

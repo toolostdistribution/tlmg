@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Mono } from 'next/font/google'
+import { SanityLive } from '@/sanity/live'
 import './new.css'
 
 const sans = Inter({
@@ -33,6 +34,7 @@ export default function NewLayout({
   return (
     <div className={`${serif.variable} ${sans.variable} ${mono.variable} nw-body`}>
       {children}
+      <SanityLive />
     </div>
   )
 }

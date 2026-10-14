@@ -1,18 +1,6 @@
 import Link from 'next/link'
-import { getCompanyBySlug, getAllCompanySlugs, type Company } from '@/payload/queries'
+import { getCompanyBySlug, getAllCompanySlugs } from '@/sanity/queries'
 import { notFound } from 'next/navigation'
-
-const divisionLogos: Record<string, string> = {
-  'too-lost': '/text-2.png',
-  'gyro': '/logos/gyro.png',
-  'group-speed': '/logos/group-speed.png',
-  'distrodirect': '/logos/distrodirect.png',
-  'soothe-sounds': '/logos/soothe-sounds.png',
-  'florecilla': '/logos/florecilla.png',
-  'tlx': '/logos/tlx.png',
-  'songearnings': '/logos/songearnings.png',
-  'songlink': '/logos/songlink.png',
-}
 
 export async function generateStaticParams() {
   const slugs = await getAllCompanySlugs()
@@ -43,10 +31,10 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
           <Link href="/brands" className="dp-back">← Back to Brands</Link>
           <div className="dp-hero-grid">
             <div className="dp-hero-left">
-              {(company.logo?.url || divisionLogos[company.slug]) ? (
+              {company.logo?.url ? (
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img
-                  src={company.logo?.url || divisionLogos[company.slug]}
+                  src={company.logo.url}
                   alt={company.name}
                   className="dp-logo"
                 />

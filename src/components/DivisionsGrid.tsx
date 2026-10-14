@@ -1,34 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-
-interface Company {
-  id: string
-  name: string
-  slug: string
-  type: string
-  shortDescription: string
-  mission?: string
-  metrics?: string[]
-  productSuite?: string[]
-  clients?: string
-  clientsLabel?: string
-  website?: string
-  socials?: { label: string; url: string }[]
-  logo?: { url?: string }
-}
-
-const divisionLogos: Record<string, string> = {
-  'too-lost': '/text-2.png',
-  'gyro': '/logos/gyro.png',
-  'group-speed': '/logos/group-speed.png',
-  'distrodirect': '/logos/distrodirect.png',
-  'soothe-sounds': '/logos/soothe-sounds.png',
-  'florecilla': '/logos/florecilla.png',
-  'tlx': '/logos/tlx.png',
-  'songearnings': '/logos/songearnings.png',
-  'songlink': '/logos/songlink.png',
-}
+import type { Company } from '@/sanity/queries'
 
 const tlSubBrands: Record<string, string> = {
   'too-lost-ventures': 'Ventures',
@@ -47,7 +20,7 @@ export function DivisionsGrid({ companies }: { companies: Company[] }) {
     <>
       <div className="cards-grid">
         {companies.map((company) => {
-          const logo = divisionLogos[company.slug] || company.logo?.url
+          const logo = company.logo?.url
           return (
             <Link
               key={company.id}

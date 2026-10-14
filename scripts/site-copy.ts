@@ -6,10 +6,6 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { boardMembers, leaders } from '../src/payload/people-data'
-import { fallbackCompanies } from '../src/payload/fallback-data'
-import { divisionContent } from '../src/payload/division-content'
-import { NEWS_ARTICLES } from '../src/payload/news-data'
 import { openings, perks } from '../src/data/careers'
 import { offices } from '../src/components/OfficesShowcase'
 
@@ -199,66 +195,6 @@ function collect(): Row[] {
   add(rows, 'careers.openings.heading', 'Careers', 'Openings', 'Heading', 'src/app/(frontend)/careers/CareersClient.tsx', 'Current Openings')
   add(rows, 'careers.search.placeholder', 'Careers', 'Openings', 'Search placeholder', 'src/app/(frontend)/careers/CareersClient.tsx', 'Search roles...')
 
-  for (const person of boardMembers) {
-    const base = `board.${person.slug}`
-    const file = 'src/payload/people-data.ts'
-    add(rows, `${base}.name`, 'About', `Board · ${person.name}`, 'Name', file, person.name)
-    add(rows, `${base}.role`, 'About', `Board · ${person.name}`, 'Affiliation', file, person.role)
-    add(rows, `${base}.tag`, 'About', `Board · ${person.name}`, 'Tag', file, person.tag)
-    person.bio?.forEach((para, i) => {
-      add(rows, `${base}.bio.${i}`, 'About', `Board · ${person.name}`, `Bio ${i + 1}`, file, para)
-    })
-  }
-
-  for (const person of leaders) {
-    const base = `leader.${person.slug}`
-    const file = 'src/payload/people-data.ts'
-    add(rows, `${base}.name`, 'About', `Leadership · ${person.name}`, 'Name', file, person.name)
-    add(rows, `${base}.role`, 'About', `Leadership · ${person.name}`, 'Title', file, person.role)
-    person.bio?.forEach((para, i) => {
-      add(rows, `${base}.bio.${i}`, 'About', `Leadership · ${person.name}`, `Bio ${i + 1}`, file, para)
-    })
-  }
-
-  for (const company of fallbackCompanies) {
-    const base = `company.${company.slug}`
-    const file = 'src/payload/fallback-data.ts'
-    add(rows, `${base}.name`, 'Divisions', company.name, 'Name', file, company.name)
-    add(rows, `${base}.type`, 'Divisions', company.name, 'Type', file, company.type)
-    add(rows, `${base}.shortDescription`, 'Divisions', company.name, 'Short description', file, company.shortDescription)
-    add(rows, `${base}.mission`, 'Divisions', company.name, 'Long description', file, company.mission)
-    add(rows, `${base}.clientsLabel`, 'Divisions', company.name, 'Clients label', file, company.clientsLabel)
-    add(rows, `${base}.clients`, 'Divisions', company.name, 'Clients', file, company.clients)
-    company.metrics?.forEach((metric, i) => {
-      add(rows, `${base}.metric.${i}`, 'Divisions', company.name, `Metric ${i + 1}`, file, metric)
-    })
-    company.productSuite?.forEach((item, i) => {
-      add(rows, `${base}.product.${i}`, 'Divisions', company.name, `Product ${i + 1}`, file, item)
-    })
-  }
-
-  for (const [slug, content] of Object.entries(divisionContent)) {
-    const file = 'src/payload/division-content.ts'
-    const company = fallbackCompanies.find((c) => c.slug === slug)
-    const section = company?.name ?? slug
-    add(rows, `division.${slug}.tagline`, 'Divisions', section, 'Tagline', file, content.tagline)
-    add(rows, `division.${slug}.longDescription`, 'Divisions', section, 'Page description', file, content.longDescription)
-    content.features?.forEach((feature, i) => {
-      add(rows, `division.${slug}.feature.${i}.title`, 'Divisions', section, `Feature ${i + 1} title`, file, feature.title)
-      add(rows, `division.${slug}.feature.${i}.desc`, 'Divisions', section, `Feature ${i + 1} description`, file, feature.desc)
-    })
-    content.metrics?.forEach((metric, i) => {
-      add(rows, `division.${slug}.metric.${i}.value`, 'Divisions', section, `Stat ${i + 1} value`, file, metric.value)
-      add(rows, `division.${slug}.metric.${i}.label`, 'Divisions', section, `Stat ${i + 1} label`, file, metric.label)
-    })
-  }
-
-  NEWS_ARTICLES.forEach((article, i) => {
-    const file = 'src/payload/news-data.ts'
-    add(rows, `news.${i}.title`, 'News', article.source, 'Headline', file, article.title)
-    add(rows, `news.${i}.summary`, 'News', article.source, 'Summary', file, article.summary)
-  })
-
   for (const role of openings) {
     const file = 'src/data/careers.ts'
     const section = role.title
@@ -322,14 +258,6 @@ function applyReplacement(file: string, oldVal: string, newVal: string, slug?: s
 }
 
 function slugFromKey(key: string) {
-  const leader = key.match(/^leader\.([^.]+)\./)
-  if (leader) return leader[1]
-  const board = key.match(/^board\.([^.]+)\./)
-  if (board) return board[1]
-  const company = key.match(/^company\.([^.]+)\./)
-  if (company) return company[1]
-  const division = key.match(/^division\.([^.]+)\./)
-  if (division) return division[1]
   const office = key.match(/^office\.([^.]+)\./)
   if (office) return office[1]
   return undefined

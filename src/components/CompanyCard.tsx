@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import type { Company } from '@/payload/queries'
+import type { Company } from '@/sanity/queries'
 
 function getInitials(name: string): string {
   const words = name.replace(/[^a-zA-Z\s]/g, '').split(/\s+/)

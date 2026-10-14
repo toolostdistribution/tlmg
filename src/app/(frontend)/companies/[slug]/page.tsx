@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getCompanyBySlug, getAllCompanySlugs } from '@/payload/queries'
+import { getCompanyBySlug, getAllCompanySlugs } from '@/sanity/queries'
 
 function getInitials(name: string): string {
   const words = name.replace(/[^a-zA-Z\s]/g, '').split(/\s+/)

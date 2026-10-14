@@ -1,12 +1,12 @@
-import { NEWS_ARTICLES } from '@/payload/news-data'
+import { getNews } from '@/sanity/queries'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'News — Too Lost Music Group',
 }
 
-export default function NewsPage() {
-  const sorted = [...NEWS_ARTICLES].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+export default async function NewsPage() {
+  const sorted = await getNews()
 
   return (
     <main className="subpage news-page">

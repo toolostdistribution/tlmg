@@ -1,25 +1,26 @@
 import { notFound } from 'next/navigation'
 import { PersonProfile } from '@/components/PersonProfile'
-import { boardMembers } from '@/payload/people-data'
+import { getBoardMembers } from '@/sanity/queries'
 
-function findMember(slug: string) {
-  return boardMembers.find((m) => m.slug === slug && m.bio.length > 0)
+async function findMember(slug: string) {
+  return (await getBoardMembers()).find((m) => m.slug === slug && m.bio.length > 0)
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const boardMembers = await getBoardMembers()
   return boardMembers.filter((m) => m.bio.length > 0).map((m) => ({ slug: m.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const member = findMember(slug)
+  const member = await findMember(slug)
   if (!member) return {}
   return { title: `${member.name} — Too Lost Music Group` }
 }
 
 export default async function BoardMemberPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const member = findMember(slug)
+  const member = await findMember(slug)
   if (!member) notFound()
 
   return (

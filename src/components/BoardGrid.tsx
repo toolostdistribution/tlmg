@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { boardMembers, type BoardMember } from '@/payload/people-data'
+import { getBoardMembers } from '@/sanity/queries'
 
-export { boardMembers, type BoardMember }
+export async function BoardGrid() {
+  const boardMembers = await getBoardMembers()
 
-export function BoardGrid() {
   return (
     <div className="cards-grid">
       {boardMembers.map((member) => {

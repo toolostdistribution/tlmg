@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer'
 import { Loader } from '@/components/Loader'
 import { Navigation } from '@/components/Navigation'
 import { ScrollReveal } from '@/components/ScrollReveal'
+import { SanityLive } from '@/sanity/live'
 import '../globals.css'
 
 const displayFont = Inter({
@@ -41,6 +42,7 @@ export default function FrontendLayout({
         {children}
       </main>
       <Footer />
+      <SanityLive />
     </div>
   )
 }
