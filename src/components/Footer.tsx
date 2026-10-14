@@ -20,8 +20,8 @@ export function Footer() {
       <div className="footer-inner">
         <div className="footer-grid">
           <div className="footer-col">
-            <Link href="/about">About</Link>
-            <Link href="/divisions">Brands</Link>
+            <Link href="/company">Company</Link>
+            <Link href="/brands">Brands</Link>
             <Link href="/news">News</Link>
             <a href="https://toolost.com/careers" target="_blank" rel="noopener noreferrer">Careers</a>
             <Link href="/contact">Contact</Link>

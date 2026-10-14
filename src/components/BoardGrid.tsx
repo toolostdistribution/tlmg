@@ -13,7 +13,7 @@ export function BoardGrid() {
           return (
             <Link
               key={member.name}
-              href={`/about/${member.slug}`}
+              href={`/company/board/${member.slug}`}
               className="card board-director-card"
             >
               <div className="card-avatar">

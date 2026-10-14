@@ -15,16 +15,17 @@ interface OfficeLocation {
 }
 
 const OFFICES: OfficeLocation[] = [
-  { city: 'New York', country: 'United States', role: 'Too Lost (HQ)', lng: -73.9897, lat: 40.7394, address: '915 Broadway, 8th Floor, New York NY 10010', photo: '/offices/new-york.jpg' },
-  { city: 'Hollywood', country: 'United States', role: 'Too Lost', lng: -118.3287, lat: 34.1017, address: '1680 Vine Street, 11th Floor, Los Angeles, CA 90028', photo: '/offices/hollywood.jpg' },
-  { city: 'Reykjavík', country: 'Iceland', role: 'Too Lost', lng: -21.9426, lat: 64.1466, address: 'Laugavegur 26, 101 Reykjavík', photo: '/offices/reykjavik.jpg' },
-  { city: 'Brisbane', country: 'Australia', role: 'GYRO.Group', lng: 153.0251, lat: -27.4698, address: '279 Brunswick St, Fortitude Valley QLD 4006', photo: '/offices/brisbane.jpg' },
-  { city: 'Sydney', country: 'Australia', role: 'GYRO.Group', lng: 151.2093, lat: -33.8688, address: '', photo: '/offices/sydney.jpg' },
-  { city: 'Melbourne', country: 'Australia', role: 'GYRO.Group', lng: 144.9631, lat: -37.8136, address: '', photo: '/offices/melbourne.jpg' },
-  { city: 'Manila', country: 'Philippines', role: 'GYRO.Group', lng: 120.9842, lat: 14.5995, address: '', photo: '/offices/manila.jpg' },
-  { city: 'Mumbai', country: 'India', role: 'GYRO.Group', lng: 72.8656, lat: 19.0596, address: '', photo: '/offices/mumbai.jpg' },
-  { city: 'São Paulo', country: 'Brazil', role: 'GYRO.Group', lng: -46.6550, lat: -23.5613, address: '', photo: '/offices/sao-paulo.jpg' },
-  { city: 'Toronto', country: 'Canada', role: 'GYRO.Group', lng: -79.3832, lat: 43.6532, address: '', photo: '/offices/toronto.jpg' },
+  { city: 'New York', country: 'United States', role: 'Too Lost Music Group (HQ)', lng: -73.9897, lat: 40.7394, address: '915 Broadway, 8th Floor, New York NY 10010', photo: '/offices/new-york.jpg' },
+  { city: 'Hollywood', country: 'United States', role: 'Too Lost Music Group', lng: -118.3287, lat: 34.1017, address: '1680 Vine Street, 11th Floor, Los Angeles, CA 90028', photo: '/offices/hollywood.jpg' },
+  { city: 'London', country: 'United Kingdom', role: 'Too Lost Music Group', lng: -0.1388, lat: 51.5446, address: '58 Rochester Place, London, England, NW1 9JX', photo: '/offices/london.jpg' },
+  { city: 'Reykjavík', country: 'Iceland', role: 'Too Lost Music Group', lng: -21.9426, lat: 64.1466, address: 'Laugavegur 26, 101 Reykjavík', photo: '/offices/reykjavik.jpg' },
+  { city: 'Brisbane', country: 'Australia', role: 'Too Lost Music Group', lng: 153.0251, lat: -27.4698, address: '279 Brunswick St, Fortitude Valley QLD 4006', photo: '/offices/brisbane.jpg' },
+  { city: 'Sydney', country: 'Australia', role: 'Too Lost Music Group', lng: 151.2093, lat: -33.8688, address: '', photo: '/offices/sydney.jpg' },
+  { city: 'Melbourne', country: 'Australia', role: 'Too Lost Music Group', lng: 144.9926, lat: -37.8297, address: '27 Gwynne Street, Cremorne VIC 3121', photo: '/offices/melbourne.jpg' },
+  { city: 'Manila', country: 'Philippines', role: 'Too Lost Music Group', lng: 120.9842, lat: 14.5995, address: '', photo: '/offices/manila.jpg' },
+  { city: 'Mumbai', country: 'India', role: 'Too Lost Music Group', lng: 72.8656, lat: 19.0596, address: '', photo: '/offices/mumbai.jpg' },
+  { city: 'São Paulo', country: 'Brazil', role: 'Too Lost Music Group', lng: -46.6550, lat: -23.5613, address: '', photo: '/offices/sao-paulo.jpg' },
+  { city: 'Toronto', country: 'Canada', role: 'Too Lost Music Group', lng: -79.3832, lat: 43.6532, address: '', photo: '/offices/toronto.jpg' },
 ]
 
 function createDotPatternImage(size: number, dotRadius: number, color: [number, number, number, number]): ImageData {

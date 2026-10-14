@@ -161,6 +161,20 @@ export const leaders: Leader[] = [
     ],
   },
   {
+    name: 'Jay Rosenstock',
+    slug: 'james-rosenstock',
+    role: 'Chief Financial Officer, Too Lost Music Group',
+    photo: '/team/james-rosenstock.png',
+    linkedin: 'https://www.linkedin.com/in/james-rosenstock/',
+    bio: [
+      'James “Jay” Rosenstock is Chief Financial Officer of Too Lost Music Group. He leads the company\'s global finance organization, including financial planning, accounting, capital allocation and M&A.',
+      'Jay brings more than 25 years of experience in the media and technology sectors, with deep roots in the music industry. As Head of Corporate Development at Sony Entertainment, he helped expand Sony Music through its combination with BMG and grew Sony/ATV Music Publishing through a series of catalog acquisitions.',
+      'Before joining Too Lost, Jay served as Chief Financial Officer of three consumer technology companies: ezCater, Skillshare and, most recently, KKR-backed PlayOn Sports. He led venture- and private equity-backed finance organizations through periods of rapid growth.',
+      'Jay has also led international growth at some of the world\'s best-known media brands. He served as Head of Corporate Development at Discovery Communications, President of VICELAND International and Executive Vice President, International at WWE, where he ran the company\'s $250 million international business.',
+      'Jay began his career as an investment banker at Credit Suisse First Boston. He serves on the Board of Directors of the Virginia Tech Foundation and is an honors graduate of Virginia Tech\'s Pamplin College of Business.',
+    ],
+  },
+  {
     name: 'Jennifer Ferrer',
     slug: 'jennifer-ferrer',
     role: 'Vice President, Commercial Strategy, Too Lost Music Group',

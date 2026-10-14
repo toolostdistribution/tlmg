@@ -34,7 +34,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="company-page">
       <div className="company-page-inner">
-        <Link href="/divisions" className="company-page-back">
+        <Link href="/brands" className="company-page-back">
           ← Back to Brands
         </Link>
 

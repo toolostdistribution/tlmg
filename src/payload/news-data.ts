@@ -9,12 +9,20 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    title: 'Too Lost Opens Its Books on Distribution Performance with Live Public Transparency Report',
+    summary: 'The Too Lost Transparency Initiative publishes live operational data, from support resolution times and DSP deliveries to payout acceptance and client retention, giving artists and labels a direct view into how the platform performs at scale.',
+    date: '2026-10-13',
+    source: 'Digital Music News',
+    url: 'https://www.digitalmusicnews.com/2026/10/13/too-lost-public-transparency-report-distributor/',
+    image: 'https://www.digitalmusicnews.com/wp-content/uploads/2026/10/too-lost-transparency-initiative.png',
+  },
+  {
     title: 'Too Lost Partners with Roblox to Bring Catalog of Independent Music to Games and Virtual Spaces',
     summary: 'Deal adds thousands of Too Lost-distributed tracks — including music by The All-American Rejects, A$AP Ferg, Teddy Swims, and Alex Warren — to the Roblox Creator Store for use across games and virtual spaces.',
     date: '2026-07-28',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/too-lost-partners-with-roblox-to-bring-catalog-of-independent-music-to-games-and-virtual-spaces/',
-    image: 'https://www.musicbusinessworldwide.com/files/2026/07/Too-Lost-x-Roblox.jpg',
+    image: '/news/too-lost-x-roblox.jpg',
   },
   {
     title: 'Too Lost Acquires Australia\'s GYRO.Group in First Acquisition Since Nine-Figure Raise',
@@ -22,7 +30,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2026-07-15',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/too-lost-acquires-australias-gyro-group-in-first-acquisition-since-nine-figure-raise/',
-    image: 'https://www.musicbusinessworldwide.com/files/2026/07/Screenshot-2026-07-15-at-11.46.29-e1784112425622.jpg',
+    image: '/news/screenshot-2026-07-15-at-11-46-29-e1784112425622.jpg',
   },
   {
     title: 'Jay Moore Appointed Chief Investment Officer at Too Lost',
@@ -30,7 +38,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2026-05-28',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/jay-moore-appointed-chief-investment-officer-at-too-lost/',
-    image: 'https://www.musicbusinessworldwide.com/files/2026/05/Screenshot-2026-05-28-at-15.00.33.jpg',
+    image: '/news/screenshot-2026-05-28-at-15-00-33.jpg',
   },
   {
     title: 'Too Lost Raises Capital From TA Associates and GoldState',
@@ -57,12 +65,28 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: 'https://www.digitalmusicnews.com/wp-content/uploads/2026/01/too-lost-greg-hirschhorn-statement-2026.jpeg',
   },
   {
+    title: 'Too Lost Acquires MAYK\'s \'Social Meme Music\' Catalog',
+    summary: 'Too Lost acquires the full MAYK UGC catalog, expanding its footprint in social meme music and AI-driven creator workflows.',
+    date: '2026-01-13',
+    source: 'Digital Music News',
+    url: 'https://www.digitalmusicnews.com/2026/01/13/too-lost-acquires-mayk-catalog/',
+    image: 'https://www.digitalmusicnews.com/wp-content/uploads/2026/01/too-lost-acquires-mayk-social-meme-music.png',
+  },
+  {
+    title: 'Too Lost Expands Global Reach, Inking New Deal with Melon',
+    summary: 'Too Lost partners with South Korea\'s Melon to expand indie artists\' reach in Asia, strengthening its global digital distribution strategy.',
+    date: '2025-11-13',
+    source: 'Digital Music News',
+    url: 'https://www.digitalmusicnews.com/2025/11/13/too-lost-global-expansion-south-korea-melon/',
+    image: 'https://www.digitalmusicnews.com/wp-content/uploads/2025/11/Untitled-design-2025-11-14T140638.028.png',
+  },
+  {
     title: 'Too Lost Partners with Xposure Music to Co-Fund Catalog Acquisitions',
     summary: 'Partnership plans to deploy tens of millions of dollars in upcoming catalog deals, combining data-driven valuation with global distribution infrastructure.',
     date: '2025-10-30',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/too-lost-partners-with-xposure-music-to-co-fund-catalog-acquisitions-with-plans-to-deploy-tens-of-millions-of-dollars-in-upcoming-deals/',
-    image: 'https://www.musicbusinessworldwide.com/files/2025/10/Screenshot-2025-10-30-at-3.19.09-PM-e1761808973797.jpg',
+    image: '/news/screenshot-2025-10-30-at-3-19-09-pm-e1761808973797.jpg',
   },
   {
     title: 'The All-American Rejects Sign Global Distribution Deal with Too Lost',
@@ -78,7 +102,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2025-10-09',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/too-lost-makes-seven-figure-investment-into-independent-label-rebellion-records/',
-    image: 'https://www.musicbusinessworldwide.com/files/2025/10/two-dudes-16x9_BW.jpg',
+    image: '/news/two-dudes-16x9-bw.jpg',
   },
   {
     title: 'Too Lost Makes Seven-Figure Investment in AntiFragile Equity Partners',
@@ -86,7 +110,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2025-10-15',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/too-lost-makes-seven-figure-investment-in-catalog-acquisition-startup-antifragile-equity-partners/',
-    image: 'https://www.musicbusinessworldwide.com/files/2025/10/Screenshot-2025-10-15-at-11.51.22-e1760525547278.jpg',
+    image: '/news/screenshot-2025-10-15-at-11-51-22-e1760525547278.jpg',
   },
   {
     title: 'EVEN Partners with Too Lost to Bring Direct-to-Fan Sales to 400,000 Artists',
@@ -94,7 +118,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2025-09-24',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/even-partners-with-too-lost-to-bring-direct-to-fan-sales-to-400000-artists-and-labels/',
-    image: 'https://www.musicbusinessworldwide.com/files/2025/07/Mag-Rodriguez_new.jpg',
+    image: '/news/mag-rodriguez-new.jpg',
   },
   {
     title: 'On the Radar UK Series Launched with Olympus Projects & Too Lost',
@@ -230,7 +254,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2025-08-15',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/ai-music-app-hook-expands-distribution-network-with-too-lost-partnership/',
-    image: 'https://www.musicbusinessworldwide.com/files/2023/10/HOOK-Gaurav-Sharma-photo-credit-Florian-Koenigsberger-e1697107704168.jpg',
+    image: '/news/hook-gaurav-sharma-photo-credit-florian-koenigsberger-e1697107704168.jpg',
   },
   {
     title: 'Michael Lewan Named Executive Director of Music Fights Fraud Alliance',
@@ -238,7 +262,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2025-07-10',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/michael-lewan-named-executive-director-of-music-fights-fraud-alliance-youtube-music-onerpm-revelator-too-lost-and-more-join-as-members/',
-    image: 'https://www.musicbusinessworldwide.com/files/2025/02/michael-lewan-hi-res-photo-1-e1740576151628.jpeg',
+    image: '/news/michael-lewan-hi-res-photo-1-e1740576151628.jpg',
   },
   {
     title: 'GYRO.Group Recruits Henry Compton',
@@ -254,7 +278,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2026-04-15',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/australias-gyro-group-expands-into-latin-america-with-new-office-in-brazil/',
-    image: 'https://www.musicbusinessworldwide.com/files/2026/03/Team-Photo-e1774529446743.jpg',
+    image: '/news/team-photo-e1774529446743.jpg',
   },
   {
     title: 'GYRO.Group Senior Leadership Promotions',
@@ -286,7 +310,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: '2025-03-10',
     source: 'Music Business Worldwide',
     url: 'https://www.musicbusinessworldwide.com/australias-gyrostream-and-distrodirect-launch-group-speed-artist-services-venture/',
-    image: 'https://www.musicbusinessworldwide.com/files/2024/03/Screenshot-2024-03-06-at-19.06.42-e1709752024364.jpg',
+    image: '/news/screenshot-2024-03-06-at-19-06-42-e1709752024364.jpg',
   },
   {
     title: 'How This Aussie Company Helps Indie Musicians Crack the Streaming Code',

@@ -2,13 +2,29 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { ThemeToggle } from './ThemeToggle'
 import { HERO_LOGO_HANDOFF, HERO_LOGO_MORPH_DISTANCE } from './hero-logo-morph'
+import { COMPANY_SECTIONS, companySectionHref } from '@/data/company-sections'
 
-const NAV_ITEMS = [
-  { href: '/about', label: 'About' },
-  { href: '/divisions', label: 'Brands' },
+interface NavItem {
+  href: string
+  label: string
+  external?: boolean
+  cta?: boolean
+  children?: { href: string; label: string }[]
+}
+
+const NAV_ITEMS: NavItem[] = [
+  {
+    href: '/company',
+    label: 'Company',
+    children: [
+      { href: '/company', label: 'Who We Are' },
+      ...COMPANY_SECTIONS.map((s) => ({ href: companySectionHref(s.slug), label: s.label })),
+    ],
+  },
+  { href: '/brands', label: 'Brands' },
   { href: '/news', label: 'News' },
   { href: 'https://toolost.com/careers', label: 'Careers', external: true },
   { href: '/contact', label: 'Contact', cta: true },
@@ -21,7 +37,9 @@ export function Navigation() {
   const [heroDark, setHeroDark] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
-  const isHeroLogoPage = pathname === '/about'
+  const isHeroLogoPage = pathname === '/new-landing' || pathname === '/company'
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const dropdownRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     function onScroll() {
@@ -60,7 +78,24 @@ export function Navigation() {
 
   useEffect(() => {
     setMobileOpen(false)
+    setOpenDropdown(null)
   }, [pathname])
+
+  useEffect(() => {
+    if (!openDropdown) return
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpenDropdown(null)
+    }
+    function onPointerDown(e: PointerEvent) {
+      if (!dropdownRef.current?.contains(e.target as Node)) setOpenDropdown(null)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
+  }, [openDropdown])
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
@@ -89,7 +124,46 @@ export function Navigation() {
         </Link>
 
         <ul className="nav-links">
-          {NAV_ITEMS.map(item => (
+          {NAV_ITEMS.map(item => item.children ? (
+            <li
+              key={item.href}
+              ref={dropdownRef}
+              className={`nav-item nav-item-dropdown ${openDropdown === item.href ? 'active' : ''}`}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpenDropdown(null)
+              }}
+            >
+              <button
+                type="button"
+                className="nav-link"
+                aria-haspopup="true"
+                aria-expanded={openDropdown === item.href}
+                aria-controls="nav-dropdown-company"
+                onClick={() => setOpenDropdown(prev => (prev === item.href ? null : item.href))}
+              >
+                {item.label}
+                <svg className="nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              {openDropdown === item.href && (
+                <div className="nav-mega nav-mega-compact" id="nav-dropdown-company">
+                  <div className="nav-mega-grid">
+                    {item.children.map(child => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="nav-mega-item"
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </li>
+          ) : (
             <li key={item.href} className="nav-item">
               {item.external ? (
                 <a
@@ -137,6 +211,25 @@ export function Navigation() {
                 >
                   {item.label}
                 </a>
+              ) : item.children ? (
+                <>
+                  <span className={`mobile-nav-link ${pathname.startsWith(item.href) ? 'mobile-nav-link-active' : ''}`}>
+                    {item.label}
+                  </span>
+                  <ul className="mobile-nav-sublinks">
+                      {item.children.map(child => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className={`mobile-nav-sublink ${pathname === child.href ? 'mobile-nav-link-active' : ''}`}
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </>
               ) : (
                 <Link
                   href={item.href}

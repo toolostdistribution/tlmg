@@ -30,8 +30,6 @@ const divisionLogos: Record<string, string> = {
   'songlink': '/logos/songlink.png',
 }
 
-const externalOnly = new Set(['songearnings', 'songlink'])
-
 const tlSubBrands: Record<string, string> = {
   'too-lost-ventures': 'Ventures',
   'too-lost-publishing': 'Publishing',
@@ -50,15 +48,10 @@ export function DivisionsGrid({ companies }: { companies: Company[] }) {
       <div className="cards-grid">
         {companies.map((company) => {
           const logo = divisionLogos[company.slug] || company.logo?.url
-          const isExternal = externalOnly.has(company.slug) && company.website
-          const CardTag = isExternal ? 'a' : Link
-          const cardProps = isExternal
-            ? { href: company.website!, target: '_blank', rel: 'noopener noreferrer' }
-            : { href: `/divisions/${company.slug}` }
           return (
-            <CardTag
+            <Link
               key={company.id}
-              {...cardProps}
+              href={`/brands/${company.slug}`}
               className="card card-link division-card"
             >
               <div className="division-card-logo division-card-logo-centered">
@@ -75,7 +68,7 @@ export function DivisionsGrid({ companies }: { companies: Company[] }) {
                   <span className="division-card-initials">{getInitials(company.name)}</span>
                 )}
               </div>
-            </CardTag>
+            </Link>
           )
         })}
       </div>

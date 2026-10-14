@@ -193,7 +193,7 @@ function collect(): Row[] {
   add(rows, 'offices.intro', 'Offices', 'Hero', 'Description', 'src/app/(frontend)/offices/page.tsx',
     'Operating across ten cities on five continents, we work where music happens.')
 
-  add(rows, 'divisions.headline', 'Divisions', 'Hero', 'Heading', 'src/app/(frontend)/divisions/page.tsx', 'Brands')
+  add(rows, 'divisions.headline', 'Divisions', 'Hero', 'Heading', 'src/app/(frontend)/brands/page.tsx', 'Brands')
   add(rows, 'news.headline', 'News', 'Hero', 'Heading', 'src/app/(frontend)/news/page.tsx', 'News')
   add(rows, 'careers.headline', 'Careers', 'Hero', 'Heading', 'src/app/(frontend)/careers/CareersClient.tsx', 'Careers')
   add(rows, 'careers.openings.heading', 'Careers', 'Openings', 'Heading', 'src/app/(frontend)/careers/CareersClient.tsx', 'Current Openings')

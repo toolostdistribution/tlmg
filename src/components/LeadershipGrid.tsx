@@ -13,7 +13,7 @@ export function LeadershipGrid() {
           return (
             <Link
               key={member.name}
-              href={`/about/${member.slug}`}
+              href={`/company/leadership/${member.slug}`}
               className="card board-card"
             >
               <div className="card-avatar">

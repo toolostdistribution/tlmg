@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+build
+export
+coverage
+.DS_Store
+*.pem
+*.log
+.env*
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+payload.db
+mobile-shots
+scripts/mobile-shots.mjs
+'
