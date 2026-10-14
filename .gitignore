@@ -45,3 +45,6 @@ payload.db
 
 # export build output
 /export/
+
+# sanity
+.sanity
